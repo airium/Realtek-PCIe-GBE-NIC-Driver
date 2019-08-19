@@ -15,14 +15,14 @@ Using this driver for the devices above will resolve the problem that uploading 
 
 2. Download the driver and install
 
-    This repo contains a copy of the official driver (8.046.00):
+    This repo contains a copy of the official driver (8.047.04):
 
     ```bash
     git clone https://github.com/airium/Realtek-PCIe-GBE-NIC-Driver.git
-    cd Realtek-PCIe-GBE-NIC-Driver/r8168-8.046.00
+    cd Realtek-PCIe-GBE-NIC-Driver/r8168-8.047.04
     sh autorun.sh
     # this script will break the network temporarily
-    # on Ubuntu 16/18, it will automatically restore in ~1 minute
+    # on Ubuntu 16/18, your ssh session will automatically recover in ~1 minute
     # on Debian 8/9, you might have to reboot manually
     ```
 
