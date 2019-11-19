@@ -1,36 +1,33 @@
 # Realtek PCIe GBE NIC Driver
 
-Applicable for RTL8111/8168/8411 PCIe GBE NIC. \
-Using this driver for the devices above will resolve the problem that uploading speed is limited around 4MB/s per TCP connection under TCP-BBR.
+Applicable for RTL8111/8168/8411 PCIe GBE NIC.
 
-1. Install dependences
+Using the official driver will resolve sending rate being capped at 4MB/s per tcp connection under tcp-bbr.
+
+1. Install dependences (assume `sudo su`)
 
     ```bash
-    apt update
-    apt install build-essential libelf-dev linux-headers-$(uname -r)
+    apt update && apt install build-essential libelf-dev linux-headers-$(uname -r)
     ```
 
-    **if you are using Ubuntu PPA kernel, please download header packages by yourself:* \
-    <http://kernel.ubuntu.com/~kernel-ppa/mainline/>
+    Note: [Download header packages by yourself](http://kernel.ubuntu.com/~kernel-ppa/mainline/) if you are using Ubuntu PPA kernel.
 
-2. Download the driver and install
+2. Download and install the driver (assume `sudo su`)
 
-    This repo contains a copy of the official driver (8.047.04):
+    This repo contains a copy of the official driver (8.047.04, tested working on linux 5.3):
 
     ```bash
     git clone https://github.com/airium/Realtek-PCIe-GBE-NIC-Driver.git
     cd Realtek-PCIe-GBE-NIC-Driver/r8168-8.047.04
     sh autorun.sh
     # this script will break the network temporarily
-    # on Ubuntu 16/18, your ssh session will automatically recover in ~1 minute
-    # on Debian 8/9, you might have to reboot manually
+    # on Ubuntu 16/18, your ssh session will be automatically resumed in ~1 minute
+    # on Debian 8/9, you might have to reboot manually after ~5 minutes
     ```
 
-    You can also check newer drivers from Realtek's official site: \
-    <https://www.realtek.com/en/component/zoo/advanced-search/472?Itemid=276> \
-    Note: it seems Realtek is changing their urls frequently, you probably have to search for new ones.
+    Note: You can also check newer drivers from [Realtek's official site](https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software) (it seems that Realtek is changing their urls frequently, you probably have to search for new one).
 
-3. Check if the driver of the network interface in which you are interested has been updated
+3. Check if the driver of the network interface in which you are interested has been updated (assume `sudo su`)
 
     ```bash
     for i in $(ls /sys/class/net); do
@@ -55,7 +52,7 @@ Using this driver for the devices above will resolve the problem that uploading 
     supports-priv-flags: no
     ```
 
-    Note: you need to re-install the driver on changing kernel.
+    Note: You need to re-install the driver after changing kernel.
 
 Reference:
 
