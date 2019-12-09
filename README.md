@@ -16,11 +16,11 @@ Newer distros might have resolve this issue, but I haven't verified it so far.
 
 2. Download and install the driver (assume `sudo su`)
 
-    This repo contains a copy of the official driver (8.047.04, tested working as of Linux 5.3):
+    This repo contains a copy of the official driver (8.047.05, tested working as of Linux 5.3):
 
     ```bash
     git clone https://github.com/airium/Realtek-PCIe-GBE-NIC-Driver.git
-    cd Realtek-PCIe-GBE-NIC-Driver/r8168-8.047.04
+    cd Realtek-PCIe-GBE-NIC-Driver/r8168-8.047.05
     sh autorun.sh
     # this script will break the network temporarily
     # on Ubuntu 16/18, your ssh session will be automatically resumed in ~1 minute
