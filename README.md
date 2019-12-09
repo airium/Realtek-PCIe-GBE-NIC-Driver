@@ -41,12 +41,12 @@ Newer distros might have resolve this issue, but I haven't verified it so far.
     Example of success
 
     ```text
-    enp1s0 =====================
+    enp4s0 =====================
     driver: r8168
-    version: 8.046.00-NAPI
+    version: 8.047.05-NAPI
     firmware-version:
     expansion-rom-version:
-    bus-info: 0000:01:00.0
+    bus-info: 0000:04:00.0
     supports-statistics: yes
     supports-test: no
     supports-eeprom-access: no
