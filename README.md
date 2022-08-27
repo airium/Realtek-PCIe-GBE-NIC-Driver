@@ -2,9 +2,12 @@
 
 Applicable for RTL8111/8168/8411 PCIe GBE NIC.
 
-Using the official driver will resolve sending rate being capped at 4MB/s per tcp connection under tcp-bbr, typically when you're using the default `r8169` nic driver on RTL8168 device.
-Newer distros like Ubuntu 18.04.3 with a mainline Linux 5.3 should not have the problem any more.
-**You should try this driver only if you did notice the sending rate degradation.**
+Using the official driver will resolve:
+
+1. sending rate being capped at 4MB/s per tcp connection under tcp-bbr, typically when you're using the default `r8169` nic driver on RTL8168 device. Newer distros like Ubuntu 18.04.3 with a mainline Linux 5.3 should not have the problem any more.
+2. can only negotiate to 100 Mb/s rather than 1000 Mb/s.
+
+**You should try this driver only if you meet the problems above.**
 
 1. Install dependences (assume `sudo su`)
 
